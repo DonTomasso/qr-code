@@ -1,5 +1,7 @@
-import QRCode from "react-qr-code";
 import { useRouter } from "next/router";
+import { QRCode } from "react-qrcode-logo";
+
+const sizeVar = 1;
 
 export default function Home() {
   const router = useRouter();
@@ -9,16 +11,23 @@ export default function Home() {
     return null;
   }
 
+  const size = Math.max(200, qrValue.length * sizeVar);
+
   return (
     <>
       <main className="text-center">
         <h1 className="text-3xl font-bold my-10">{qrValue}</h1>
-        <QRCode
-          className="mx-auto"
-          size={256}
-          value={qrValue}
-          viewBox={`0 0 256 256`}
-        />
+        <div className="inline-block">
+          <QRCode
+            size={size}
+            value={qrValue}
+            bgColor="black"
+            fgColor="white"
+            logoImage="/favicon.ico"
+            logoPadding={10}
+            removeQrCodeBehindLogo={true}
+          />
+        </div>
       </main>
     </>
   );
