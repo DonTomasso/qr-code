@@ -20,12 +20,12 @@ export default function Home() {
           router.push(`/qr/${encodeURIComponent(qrValue)}`);
         }}
       >
-        <div className="text-center max-w-full w-96 mx-auto ">
+        <div className="text-center max-w-auto w-96 mx-auto px-2">
           <label
             htmlFor="qr-value"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
-            Värde att generera QR för
+            Skapa QR för
           </label>
           <input
             type="text"
@@ -35,7 +35,7 @@ export default function Home() {
               setQrValue(evt.target.value);
             }}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="t ex. http://dontomasso.com"
+            placeholder="t ex. en webbadress eller ett telefonnummer"
             required
           />
         </div>
