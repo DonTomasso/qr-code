@@ -20,7 +20,7 @@ export default function Home() {
           router.push(`/qr/${encodeURIComponent(qrValue)}`);
         }}
       >
-        <div className="text-center max-w-md mx-auto">
+        <div className="text-center max-w-full w-96 mx-auto ">
           <label
             htmlFor="qr-value"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
